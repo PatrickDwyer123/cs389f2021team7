@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.carbonfootprint">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CarbonFootprint">
+        <activity
+            android:name=".SuggestionsPage"
+            android:exported="true" />
+        <activity
+            android:name=".InitiateSuggestionsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PastResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PastResultsDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Waste"
+            android:exported="true" />
+        <activity
+            android:name=".Transportation"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".HomeEnergy"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".HomeEnergyReduceEmissions"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".InitiateCalculator"
+            android:exported="true" />
+        <activity
+            android:name=".DemoCalculatorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DemoHomeActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+            android:name=".LocationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeEnergySuggestions"
+            android:exported="true" />
+        <activity
+            android:name=".WasteResults"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".WelcomeScreen"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".SuggestionPage"
+            android:exported="true" />
+    </application>
+
+</manifest>
