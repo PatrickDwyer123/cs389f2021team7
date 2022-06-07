@@ -31,6 +31,10 @@ anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim nav_default_enter_anim
+anim nav_default_exit_anim
+anim nav_default_pop_enter_anim
+anim nav_default_pop_exit_anim
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -57,6 +61,10 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+animator nav_default_enter_anim
+animator nav_default_exit_anim
+animator nav_default_pop_enter_anim
+animator nav_default_pop_exit_anim
 array Utility
 array answer
 array maintenanceAnswer
@@ -66,6 +74,7 @@ array time
 array units
 attr SharedValue
 attr SharedValueId
+attr action
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -117,6 +126,7 @@ attr animationMode
 attr appBarLayoutStyle
 attr applyMotionScene
 attr arcMode
+attr argType
 attr arrowHeadLength
 attr arrowShaftLength
 attr attributeName
@@ -349,16 +359,20 @@ attr customNavigationLayout
 attr customPixelDimension
 attr customReference
 attr customStringValue
+attr data
+attr dataPattern
 attr dayInvalidStyle
 attr daySelectedStyle
 attr dayStyle
 attr dayTodayStyle
 attr defaultDuration
+attr defaultNavHost
 attr defaultQueryHint
 attr defaultState
 attr deltaPolarAngle
 attr deltaPolarRadius
 attr deriveConstraintsFrom
+attr destination
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
@@ -381,6 +395,7 @@ attr drawableTint
 attr drawableTintMode
 attr drawableTopCompat
 attr drawerArrowStyle
+attr drawerLayoutStyle
 attr dropDownListViewStyle
 attr dropdownListPreferredItemHeight
 attr duration
@@ -400,6 +415,7 @@ attr endIconTintMode
 attr enforceMaterialTheme
 attr enforceTextAppearance
 attr ensureMinTouchTargetSize
+attr enterAnim
 attr errorContentDescription
 attr errorEnabled
 attr errorIconDrawable
@@ -407,6 +423,7 @@ attr errorIconTint
 attr errorIconTintMode
 attr errorTextAppearance
 attr errorTextColor
+attr exitAnim
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedHintEnabled
@@ -468,9 +485,12 @@ attr fontWeight
 attr forceApplySystemWindowInsetTop
 attr foregroundInsidePadding
 attr framePosition
+attr freezesAnimation
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
+attr gifSource
 attr goIcon
+attr graph
 attr haloColor
 attr haloRadius
 attr headerLayout
@@ -520,6 +540,7 @@ attr initialActivityCount
 attr insetForeground
 attr isLightTheme
 attr isMaterialTheme
+attr isOpaque
 attr itemBackground
 attr itemFillColor
 attr itemHorizontalPadding
@@ -551,6 +572,7 @@ attr labelBehavior
 attr labelStyle
 attr labelVisibilityMode
 attr lastBaselineToBottomHeight
+attr launchSingleTop
 attr layout
 attr layoutDescription
 attr layoutDuringTransition
@@ -646,6 +668,7 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr loopCount
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -687,6 +710,7 @@ attr measureWithLargestChild
 attr menu
 attr menuGravity
 attr methodName
+attr mimeType
 attr minHeight
 attr minHideDelay
 attr minSeparation
@@ -728,6 +752,7 @@ attr motion_postLayoutCollision
 attr motion_triggerOnCollision
 attr moveWhenScrollAtTop
 attr multiChoiceItemLayout
+attr navGraph
 attr navigationContentDescription
 attr navigationIcon
 attr navigationIconTint
@@ -736,6 +761,7 @@ attr navigationRailStyle
 attr navigationViewStyle
 attr nestedScrollFlags
 attr nestedScrollable
+attr nullable
 attr number
 attr numericModifiers
 attr onCross
@@ -776,6 +802,10 @@ attr placeholderTextAppearance
 attr placeholderTextColor
 attr placeholder_emptyVisibility
 attr polarRelativeTo
+attr popEnterAnim
+attr popExitAnim
+attr popUpTo
+attr popUpToInclusive
 attr popupMenuBackground
 attr popupMenuStyle
 attr popupTheme
@@ -861,6 +891,7 @@ attr springStopThreshold
 attr srcCompat
 attr stackFromEnd
 attr staggered
+attr startDestination
 attr startIconCheckable
 attr startIconContentDescription
 attr startIconDrawable
@@ -920,6 +951,7 @@ attr tabTextAppearance
 attr tabTextColor
 attr tabUnboundedRipple
 attr targetId
+attr targetPackage
 attr telltales_tailColor
 attr telltales_tailScale
 attr telltales_velocityMode
@@ -1030,6 +1062,7 @@ attr triggerReceiver
 attr triggerSlack
 attr ttcIndex
 attr upDuration
+attr uri
 attr useCompatPadding
 attr useMaterialThemeColors
 attr values
@@ -1371,6 +1404,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -1383,6 +1418,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen def_drawer_elevation
 dimen default_dimension
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
@@ -1796,6 +1832,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bigfoot
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1807,6 +1844,9 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_design
 drawable button_design2
 drawable button_design3
+drawable c02_gif
+drawable calculator_icon
+drawable calculator_icon_darkened
 drawable carbon_footprint_green_icon
 drawable carbon_footprint_icon
 drawable carbon_footprint_red_icon
@@ -1834,16 +1874,21 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable footprint_gif
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable greenfootbg
 drawable home_energybg
 drawable home_energyimg
 drawable ic_android
+drawable ic_baseline_access_time_24
 drawable ic_baseline_balance_24
+drawable ic_baseline_check_24
+drawable ic_baseline_check_transparent_24
 drawable ic_baseline_clear_24
 drawable ic_baseline_delete_forever_24
 drawable ic_baseline_electrical_services_24
+drawable ic_baseline_help_24
 drawable ic_baseline_house_24
 drawable ic_baseline_info_24
 drawable ic_baseline_info_24_toolbar
@@ -1853,16 +1898,37 @@ drawable ic_baseline_map_24
 drawable ic_baseline_my_location_24
 drawable ic_baseline_person_24
 drawable ic_baseline_save_24
+drawable ic_baseline_settings_24
+drawable ic_car_mechanic_svgrepo_com
+drawable ic_car_svgrepo_com
 drawable ic_clock_black_24dp
+drawable ic_dashboard_black_24dp
 drawable ic_delete
+drawable ic_furnace_svgrepo_com
+drawable ic_gas_station_svgrepo_com
+drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_light_bulb_svgrepo_com
+drawable ic_metal_bar_svgrepo_com
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_natural_gas
+drawable ic_newspaper_svgrepo_com
+drawable ic_notifications_black_24dp
+drawable ic_oil_barrel
+drawable ic_open_text_book_svgrepo_com
+drawable ic_plastic_water_bottle_svgrepo_com
+drawable ic_propane_tank_icon_138262
+drawable ic_refrigerator_svgrepo_com
+drawable ic_speedometer_svgrepo_com
+drawable ic_thermostat_svgrepo_com
+drawable ic_washer_machine_svgrepo_com
+drawable ic_window_svgrepo_com
+drawable ic_wine_glass_svgrepo_com
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1896,6 +1962,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable splashscreen
 drawable test
 drawable test2
 drawable test_custom_background
@@ -1905,6 +1972,7 @@ drawable transportationbg
 drawable transportationimg
 drawable wastebg
 drawable welcomefeet
+drawable worldmap
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1917,10 +1985,13 @@ id Equals
 id FUNCTION
 id Humidity
 id META
+id MPAndroidChartsourceLink
+id MaxMindsourceLink
 id NO_DEBUG
 id NaturalGasLayout
 id NaturalGasLayout2
 id NaturalGasSuggestions
+id Note
 id OriginalResult
 id PastResultsButton
 id RecycleGlass
@@ -1942,6 +2013,7 @@ id ReduceNaturalGasCheck
 id ReducePropane
 id ReducePropaneCheck
 id ResultsLayout
+id ResultsToolbar
 id Return
 id SHIFT
 id SHOW_ALL
@@ -1953,11 +2025,16 @@ id Subtract
 id SubtractedAmount
 id TOP_END
 id TOP_START
+id Transportation
+id WBsourceLink
 id aboutCardView
 id aboutImage
 id aboutImage2
+id aboutInfo
+id aboutParagraph
 id aboutText
 id aboutTextView
+id aboutToolbar
 id acThermostat
 id acThermostatEditText
 id acThermostatInputLayout
@@ -2064,6 +2141,10 @@ id button8
 id button9
 id buttonPanel
 id cache_measures
+id calculatorError
+id calculatorIcon
+id calculatorInfo
+id calculatorToolbar
 id cancel_action
 id cancel_button
 id carryVelocity
@@ -2082,6 +2163,9 @@ id changeUnitsCardImage
 id changeUnitsCardImage2
 id changeUnitsCardText
 id changeUnitsCardView
+id check1
+id check2
+id check3
 id checkBox
 id checkBox2
 id checkBox3
@@ -2175,6 +2259,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id durationVehicle
 id easeIn
 id easeInOut
 id easeOut
@@ -2197,6 +2282,8 @@ id end_padder
 id energyStar
 id enterAlways
 id enterAlwaysCollapsed
+id errorText1
+id errorText2
 id estimatedC02
 id exitButton
 id exitUntilCollapsed
@@ -2227,7 +2314,9 @@ id getresultspage
 id getresultspage2
 id ghost_view
 id ghost_view_holder
-id glassText
+id gif
+id gitLink
+id github
 id glass_box
 id gone
 id graph
@@ -2241,14 +2330,21 @@ id heatingAndCooling
 id hideable
 id home
 id homeAsUp
+id homeEnergy
 id homeEnergyImage
 id homeEnergyImage2
+id homeEnergyInfo
+id homeEnergyReduceInfo
 id homeEnergyReduceScrollView
+id homeEnergyReduceToolbar
 id homeEnergyScrollView
 id homeEnergyText
 id homeEnergyTextView
 id homeEnergyToolbar
 id homeEnergyTotal
+id homeInfo
+id homeParagraph
+id homeToolbar
 id home_energy_button
 id homeenergybtn
 id honorRequest
@@ -2266,7 +2362,6 @@ id ignoreRequest
 id image
 id image2
 id imageDelete
-id imageView
 id immediateStop
 id included
 id info
@@ -2290,16 +2385,18 @@ id lineChart
 id lineChartTab
 id linear
 id linearLayout
+id listLayout
 id listMode
 id listTab
 id list_item
+id locationInfo
 id locationText
 id locationTextView
+id locationToolbar
 id locationUnitCardImage
 id locationUnitCardText
 id locationUnitCardView
 id locationUnitCheckBox
-id magazinesText
 id magazines_box
 id maintenanceAnswer
 id maintenanceQuestion
@@ -2327,28 +2424,23 @@ id material_timepicker_view
 id material_value_index
 id media_actions
 id message
-id metalText
 id metal_box
 id middle
 id mileage
 id mileage2
+id mileage2Layout
 id mileage3
-id mileageQuestion
-id mileageQuestion2
-id mileageQuestion3
-id miles
-id miles2
-id miles3
+id mileage3Layout
+id mileageLayout
 id milesNum
 id milesNum2
+id milesNum2Layout
 id milesNum3
+id milesNum3Layout
+id milesNumLayout
 id milesQuestion
-id milesQuestion2
-id milesQuestion3
-id milesText
-id milesText2
-id milesText3
 id mini
+id mobile_navigation
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -2388,16 +2480,23 @@ id natrualdescription
 id naturalGasEditText
 id naturalGasInputLayout
 id naturalbutton
+id nav_controller_view_tag
+id nav_host_fragment_activity_home
+id nav_host_fragment_container
+id nav_view
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
+id navigation_dataVisualization
 id navigation_header_container
+id navigation_home
+id navigation_pastresults
+id navigation_settings
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
 id newResult
-id newspaperText
 id newspaper_box
 id next2
 id noScroll
@@ -2435,12 +2534,10 @@ id pieChart
 id pieChartTab
 id pieChartTextView
 id pin
-id plasticText
 id plastic_box
 id position
 id postLayout
 id previous2
-id primaryHeat
 id primaryHeatSpinner
 id progress_circular
 id progress_horizontal
@@ -2452,7 +2549,6 @@ id radio
 id ratio
 id rectangles
 id recyclerView
-id reduceEmissions
 id reduceLighting
 id reduceLightingEditText
 id reduceLightingInputLayout
@@ -2464,7 +2560,10 @@ id reduce_plastic
 id refrigerator
 id replaceHeatSystem
 id resultsDivider
+id resultsDivider2
+id resultsInfo
 id resultsTabLayout
+id resultsText
 id resultsViewPager
 id retrieveResultsButton
 id reverseSawtooth
@@ -2501,9 +2600,11 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id secondText
 id select_dialog_listview
 id selected
 id selection_type
+id settingsLayout
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2520,6 +2621,9 @@ id snackbar_text
 id snap
 id snapMargins
 id solarPower
+id source
+id sourceLink
+id sourcesGit
 id south
 id spaceHeaters
 id spacer
@@ -2551,7 +2655,10 @@ id stretch
 id submenuarrow
 id submit2
 id submit_area
+id suggestionsExitButton
+id suggestionsInfo
 id suggestionsScrollView
+id suggestionsToolbar
 id suggestions_landing_button
 id supportScrollUp
 id tabMode
@@ -2588,14 +2695,23 @@ id textView14
 id textView15
 id textView16
 id textView17
+id textView18
+id textView19
 id textView2
+id textView20
 id textView21
+id textView3
 id textView4
 id textView5
+id textView6
 id textView7
+id textView8
+id textView9
+id text_dashboard
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_notifications
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2603,8 +2719,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id time2
-id time3
 id timeText
 id timeTextView
 id title
@@ -2620,6 +2734,7 @@ id totalText
 id totalTextView
 id total_results
 id touch_outside
+id transParagraph
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -2627,18 +2742,26 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id transportationErrorText
+id transportationInfo
 id transportationSuggestionsBttn
 id transportationText
 id transportationTextView
 id transportationToHomeEnergy
 id transportationToResults
 id transportationToWaste
+id transportationToolbar
 id transportation_button
 id transportationbtn
 id transportationbutton
 id triangle
 id unchecked
 id uniform
+id unitsButton
+id unitsInfo
+id unitsSpinner
+id unitsText
+id unitsToolbar
 id unlabeled
 id up
 id useLogo
@@ -2653,18 +2776,24 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id washingAndDrying
-id wasteSpinner1
-id wasteSpinner2
-id wasteSpinner3
-id wasteSpinner4
-id wasteSpinner5
+id waste
+id wasteCheckBox1
+id wasteCheckBox2
+id wasteCheckBox3
+id wasteCheckBox4
+id wasteCheckBox5
+id wasteInfo
+id wasteParagraph
 id wasteSuggestionsBttn
 id wasteText
 id wasteTextView
+id wasteToolbar
 id waste_reduce_title
 id waste_results
 id wastebutton
 id weatherStripWindows
+id webView
+id welcomeText
 id welcome_text
 id west
 id wide
@@ -2685,6 +2814,7 @@ integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
 integer bottom_sheet_slide_duration
 integer cancel_button_image_alpha
+integer config_navAnimTime
 integer config_tooltipAnimTime
 integer design_snackbar_text_max_lines
 integer design_tab_indicator_anim_duration_ms
@@ -2751,6 +2881,7 @@ layout abc_tooltip
 layout activity_about
 layout activity_demo_calculator
 layout activity_demo_home
+layout activity_home
 layout activity_home_energy
 layout activity_home_energy_reduce_emissions
 layout activity_homeenergysuggestions
@@ -2761,9 +2892,11 @@ layout activity_past_results_details
 layout activity_past_results_tabbed
 layout activity_results_tabbed
 layout activity_settings
+layout activity_splash_screen
 layout activity_suggestions
 layout activity_suggestions_page
 layout activity_transportation
+layout activity_units
 layout activity_waste_results
 layout activity_welcome_screen
 layout cardview_activity_past_results
@@ -2784,11 +2917,15 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_data_visualization
+layout fragment_home
+layout fragment_past_results
 layout fragment_past_results_line_chart
 layout fragment_past_results_list
 layout fragment_results_bar_chart
 layout fragment_results_footprint
 layout fragment_results_pie_chart
+layout fragment_settings
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2867,11 +3004,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout toolbar_about
-layout toolbar_activity_home_energy
-layout toolbar_activity_initiate_calculator
 layout toolbar_activity_suggestions
-layout toolbar_activity_transportation
-layout toolbar_demo_calculator
 layout toolbar_demo_home
 layout toolbar_location
 layout toolbar_past_results
@@ -2882,12 +3015,17 @@ layout toolbar_suggestions
 layout toolbar_suggestions_page
 layout toolbar_waste_activity
 layout waste_activity
+menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+navigation mobile_navigation
 plurals mtrl_badge_content_description
 string Heating
+string MPAndroidChartsource
+string MaxMindsource
 string Reduce_Weekly_Yearly
+string WBsourceSite
 string Weekly_or_Yearly
 string _0
 string abc_action_bar_home_description
@@ -2917,7 +3055,11 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string aboutAppText
+string aboutHomeText
 string aboutText
+string aboutTransText
+string aboutWasteText
 string acThermostat
 string acThermostatInput
 string app_name
@@ -2976,6 +3118,8 @@ string fuelOil
 string furnaceBoiler
 string gcm_defaultSenderId
 string getResults
+string gitLink
+string github
 string glassHint
 string glass_hint
 string glass_question
@@ -3064,6 +3208,8 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string naturalGas
+string nav_app_bar_navigate_up_description
+string nav_app_bar_open_drawer_description
 string newspaperHint
 string newspaper_hint
 string newspaper_question
@@ -3107,10 +3253,18 @@ string replaceOne
 string replaceThree
 string replaceTwo
 string search_menu_title
+string source
+string sourceSite
+string sources_github
 string space_hint
 string status_bar_notification_info_overflow
 string submit
 string submit1
+string title_activity_home
+string title_dataVisualization
+string title_home
+string title_pastresults
+string title_settings
 string transportation
 string transportation_button
 string utility
@@ -3860,6 +4014,7 @@ styleable ActionMenuItemView android_minWidth
 styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
+styleable ActivityNavigator android_name action data dataPattern targetPackage
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable
@@ -3898,7 +4053,9 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customReference customStringValue methodName
+styleable DialogFragmentNavigator android_name
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable DrawerLayout elevation
 styleable ExtendedFloatingActionButton collapsedSize elevation extendMotionSpec hideMotionSpec showMotionSpec shrinkMotionSpec
 styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavior_autoShrink
 styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
@@ -3909,6 +4066,9 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
+styleable FragmentNavigator android_name
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth
@@ -3953,9 +4113,17 @@ styleable MotionLabel android_textSize android_typeface android_textStyle androi
 styleable MotionLayout applyMotionScene currentState layoutDescription motionDebug motionProgress showPaths
 styleable MotionScene defaultDuration layoutDuringTransition
 styleable MotionTelltales telltales_tailColor telltales_tailScale telltales_velocityMode
+styleable NavAction android_id destination enterAnim exitAnim launchSingleTop popEnterAnim popExitAnim popUpTo popUpToInclusive
+styleable NavArgument android_name android_defaultValue argType nullable
+styleable NavDeepLink android_autoVerify action mimeType uri
+styleable NavGraphNavigator startDestination
+styleable NavHost navGraph
+styleable NavHostFragment defaultNavHost
+styleable NavInclude graph
 styleable NavigationBarView backgroundTint elevation itemBackground itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable NavigationRailView headerLayout menuGravity
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextColor menu shapeAppearance shapeAppearanceOverlay
+styleable Navigator android_label android_id
 styleable OnClick clickAction targetId
 styleable OnSwipe autoCompleteMode dragDirection dragScale dragThreshold limitBoundsTo maxAcceleration maxVelocity moveWhenScrollAtTop nestedScrollFlags onTouchUp rotationCenterId springBoundary springDamping springMass springStiffness springStopThreshold touchAnchorId touchAnchorSide touchRegionId
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor

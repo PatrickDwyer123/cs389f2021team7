@@ -330,7 +330,6 @@ For the project we will have the 3 following questions:
 
 <br>
 
-
 ### Abdulmalik Alotaibi
 
 1\. I finished the past results tabbed activity and results tabbed activity.
@@ -344,5 +343,204 @@ For the project we will have the 3 following questions:
 2\. Fix the designs.
 
 3\. Outside Work.
+
+<br>
+
+## Scrum 12/6/2021
+
+### Patrick Dwyer
+
+1\. Yesterday I figured out my plan for this sprint. 
+
+2\. Today I will edit the icon in the app as much as I can.
+
+3\. Outside Work for other classes.
+
+1\. This is the first scrum of sprint three, since last scrum I planned out my Sprint 3.
+
+2\. I will continue to work on the icons within the app.
+
+3\. Oustside work from other classes.
+
+<br>
+
+### John Beltran
+
+1\. Yesterday I have done nothing
+
+2\. Today I cannot work on this project because of other work
+
+3\. Other classes
+
+1\. Nothing so far
+
+2\. By the next scrum, i hope to have updated some of the layout
+
+3\. Time, and other classes
+
+<br>
+
+### Emma Hilts
+
+1\.	I looked at my tasks again and started to plan my next steps towards completing them.
+
+2\.	I will start to make progress on my tasks.
+
+3\.	Outside work.
+
+1\.	I made a plan to complete my tasks.
+
+2\.	I will work towards completing my tasks.
+
+3\.	Outside work.
+
+<br>
+
+
+### Abdulmalik Alotaibi
+
+1\.	Plan the design.
+
+2\.	Plan different parts of the layout.
+
+3\.	Outside work.
+
+1\.	I made improvements to the design and added a new feature, data visualization/a webview, to the app.
+
+2\.	Improve the design.
+
+3\.	Outside work.
+
+<br>
+
+## Scrum 12/8/2021
+
+### Patrick Dwyer
+
+1\. I started to implement some of the User Storys
+
+2\. I started to edit the icons in the app. 
+
+3\. Other outside classes. 
+
+1\. I began to implement the User stories
+
+2\. I will continue and try to finish the stories that were assigned to me
+
+3\. Outside work from other classes. 
+
+<br>
+
+### Abdulmalik Alotaibi
+
+1\.	I was planning the design and some functions.
+
+2\.	I will try to improve some design.
+
+3\.	Outside work.
+
+1\.	I planned some of the functions and design.
+
+2\.	Improve the design and implement some functions.
+
+3\.	Outside work.
+
+<br>
+
+### Emma Hilts
+
+1\.	I didn’t do much yesterday, I looked over the app.
+
+2\.	I will work to complete my tasks. 
+
+3\.	Outside work.
+
+1\.	I planned how to complete my tasks.
+
+2\.	I will complete most of my tasks.
+
+3\.	Outside work.
+
+<br>
+
+### John Beltran
+
+1\.	I just looked at the app yesterday
+
+2\.	Hopefully complete my tasks
+
+3\.	You know, other classes, the usual
+
+1\.	I assessed the situation?
+
+2\.	I will some of my tasks.
+
+3\.	outside forces
+
+<br>
+
+## Scrum 12/13/2021
+
+### Abdulmalik Alotaibi
+
+1\.	I added a function to change units and added the information dialogues on each page.
+
+2\.	I will finalize a lot of things in the app.
+
+3\.	Outside work.
+
+1\.	Units function, information dialogues, and design improvements.
+
+2\.	Finalize a lot of things in the app.
+
+3\.	Outside work.
+
+<br>
+
+### Emma Hilts
+
+1\.	I have been editing the icon for our app.
+
+2\.	I want to finish the app icon.
+
+3\.	Outside work.
+
+1\.	Creating the app icon.
+
+2\.	I will finish my tasks and the final app icon.
+
+3\.	Outside work. 
+
+<br>
+
+### Patrick Dwyer
+
+1\. I finished making the icons.
+
+2\. I will finish all the user stories 
+
+3\. Other outside classes. 
+
+1\. I began to implement the User stories
+
+2\. I will continue and try to finish the stories that were assigned to me
+
+3\. Outside work from other classes. 
+
+<br>
+
+### John Beltran
+
+1\. Figured out where the about page is
+
+2\. Write the about pagee
+
+3\. Other Classes/tests
+
+1\. I have been working on calculations.
+
+2\. Come up with a way to write a good looking about page
+
+3\. You know, other classes
 
 <br>

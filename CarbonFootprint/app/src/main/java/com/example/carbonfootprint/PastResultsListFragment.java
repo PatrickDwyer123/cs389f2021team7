@@ -1,10 +1,11 @@
 package com.example.carbonfootprint;
 
-import static com.example.carbonfootprint.DemoHomeActivity.databaseHelper;
+import static com.example.carbonfootprint.HomeActivity.databaseHelper;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,6 +53,7 @@ public class PastResultsListFragment extends Fragment implements Serializable {
     ArrayList<String> xmlcountrycode;
     int indexCC;
     String CC;
+    ConstraintLayout listLayout;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -84,11 +87,16 @@ public class PastResultsListFragment extends Fragment implements Serializable {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_past_results_list, container, false);
 
-        currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
+        if (currentUser == null) {
+            currentUser = ((HomeActivity) getActivity()).currentUser;
+        }
+        else {
+            currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
+        }
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
-
+        listLayout = view.findViewById(R.id.listLayout);
 
 //        databaseHelper = new DatabaseHelper(getActivity());
 
@@ -98,9 +106,13 @@ public class PastResultsListFragment extends Fragment implements Serializable {
 //            databaseHelper.add(pastResults);
 //        }
 
+        if (databaseHelper == null) {
+            databaseHelper = new DatabaseHelper(getActivity());
+        }
+
         ShowOnListView (databaseHelper);
 
-        currentUser.setPastResultsCheck(false);
+//        currentUser.setPastResultsCheck(false);
 
         return view;
     }
@@ -140,6 +152,7 @@ public class PastResultsListFragment extends Fragment implements Serializable {
             public void onDeleteClick(int position) {
                 databaseHelper.delete(databaseHelper.getEveryone().get(position).getId());
                 ShowOnListView(databaseHelper);
+                Snackbar.make(listLayout, "Deleted", Snackbar.LENGTH_SHORT).show();
 //                Toast.makeText(getActivity(), "deleted", Toast.LENGTH_LONG).show();
 
 
